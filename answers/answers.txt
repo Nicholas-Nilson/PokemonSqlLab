@@ -1,0 +1,18 @@
+SELECT * FROM types;
+
+SELECT * FROM pokemons WHERE id = 45;
+
+SELECT COUNT(*) FROM pokemons;
+
+SELECT COUNT(*) FROM types;
+
+SELECT COUNT(*) FROM pokemons WHERE secondary_type IS NOT NULL;
+
+SELECT p.name, t.name FROM pokemons AS p INNER JOIN types as t ON p.primary_type = t.id;
+
+SELECT t.name as Rufflet_Secondary FROM pokemons AS p INNER JOIN types AS t ON p.secondary_type = t.id WHERE p.name = 'Rufflet';
+
+SELECT p.name AS Trainer_303_Pokemon FROM pokemons AS p INNER JOIN pokemon_trainer AS t ON t.pokemon_id = p.id;
+
+SELECT COUNT(p.id) AS Secondary_type_poison_count FROM pokemons as p INNER JOIN types AS t ON p.secondary_type = t.id AND t.name = 'Poison';
+
